@@ -1,0 +1,93 @@
+/* ── Overlay container ── */
+.az-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ── PHASE 1: plain yellow background (name is shown separately) ── */
+.az-phase1 {
+    position: absolute;
+    inset: 0;
+    background: #FCBE26;
+}
+
+/* ── PHASE 2: jaguar enter + shimmer ── */
+.az-phase2 {
+    position: absolute;
+    inset: 0;
+    background: #FCBE26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── PHASE 3: SVG mask zoom (always full opacity; the hole grows) ── */
+.az-phase3 {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+/* ── Name footer — always visible across all phases ── */
+.az-name-footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.az-name-text {
+    color: #111;
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    animation: az-name-breathe 1.5s ease-in-out infinite;
+}
+
+@keyframes az-name-breathe {
+    0%   { opacity: 1;    letter-spacing: 0.35em; }
+    50%  { opacity: 0.6; letter-spacing: 0.40em; }
+    100% { opacity: 1;    letter-spacing: 0.35em; }
+}
+
+/* ── Zoom de entrada da onça ── */
+@keyframes az-jag-enter {
+    0%   { transform: scale(0); opacity: 0; }
+    55%  { transform: scale(1); opacity: 1; }
+    75%  { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.az-jag-enter-wrap {
+    animation: az-jag-enter 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+    transform-origin: center center;
+    display: inline-block;
+    line-height: 0;
+}
+
+/* ── Shimmer sweep ── */
+@keyframes az-sweep {
+    0%   { transform: translateX(-386px); }
+    100% { transform: translateX(772px);  }
+}
+
+.az-sweep-r1 {
+    transform: translateX(-386px);
+    animation: az-sweep 1.8s ease-in-out infinite;
+    animation-delay: 0.7s;
+    animation-fill-mode: none;
+}
+
+.az-sweep-r2 {
+    transform: translateX(-386px);
+    animation: az-sweep 1.8s ease-in-out infinite;
+    animation-delay: 0.78s;
+    animation-fill-mode: none;
+}

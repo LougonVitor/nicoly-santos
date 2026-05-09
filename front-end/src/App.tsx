@@ -1,10 +1,17 @@
 import HomePage from './HomePage/HomePage'
 import './App.css'
+import { useState } from 'react';
+import AnimationZoom from './AnimationZoom/AnimationZoom';
 
 function App() {
+    const [animDone, setAnimDone] = useState(false);
+
     return (
         <>
-        <HomePage />
+        <div className="app-root">
+            <HomePage />
+            {!animDone && <AnimationZoom onComplete={() => setAnimDone(true)} />}
+        </div>
         </>
     )
 }
