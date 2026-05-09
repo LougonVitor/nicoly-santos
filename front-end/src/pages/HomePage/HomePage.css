@@ -1,3 +1,80 @@
-.home-page--root {
+/* ─────────────────────────────────────────────
+   HomePage.css
+   Scroll-driven hero shrink + about reveal
+   ───────────────────────────────────────────── */
+
+/* ── Root ── */
+.home-root {
     position: relative;
+}
+
+/* ── Zona de scroll ──────────────────────────────────────────
+   100vh  = altura do hero em tela cheia
+   500px  = SCROLL_DISTANCE: quantos px o user rola para animar
+   Durante esses 500px o hero fica sticky e encolhe.
+   A about fica sticky no fundo (z-index menor), surgindo atrás.
+─────────────────────────────────────────────────────────────── */
+.scroll-driver {
+    position: relative;
+    height: calc(100vh + 500px);
+}
+
+/* ── About sticky — camada de fundo ── */
+.about-sticky-bg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; /* fica atrás do hero */
+    overflow: hidden;
+    background: #fff; /* ou a cor de fundo do seu site */
+}
+
+/* ── About reveal (dentro do sticky bg) ── */
+.about-reveal {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    will-change: opacity, transform;
+    transform-origin: center center;
+}
+
+/* ── Hero sticky — camada da frente ── */
+.hero-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* na frente da about */
+    /* Usa margin negativo para sobrepor o about-sticky-bg */
+    margin-top: -100vh;
+    pointer-events: none; /* deixa cliques passarem quando hero estiver pequeno */
+}
+
+/* ── Container que encolhe ── */
+.hero-shrink-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    overflow: hidden;
+    will-change: width, height, border-radius, box-shadow;
+    pointer-events: all;
+    /* Fundo escuro para não mostrar branco durante a transição */
+    background: #0a0a0a;
+}
+
+/* ── Conteúdo após o efeito ── */
+.post-scroll-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+    .hero-shrink-container {
+        max-width: 100vw;
+    }
 }

@@ -6,9 +6,10 @@
     justify-content: center;
     overflow: hidden;
 
-    background-image: url("imgs/banner-test.jpg");
+    /*SE REMOVER APARECE A CARA DELA DE COMEÇO*/
+    background-image: url("../../assets/nic_generated_by_ia.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; 
 }

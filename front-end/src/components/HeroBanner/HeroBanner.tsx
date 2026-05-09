@@ -1,8 +1,9 @@
 import "./HeroBanner.css";
 
-export function HeroBanner() {
+export default function HeroBanner() {
     return (
-        <div className="hero-banner">
-        </div>
+    <>
+    <div className="hero-banner" />
+    </>
     );
 }
