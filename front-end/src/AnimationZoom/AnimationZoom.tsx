@@ -25,9 +25,9 @@ export default function AnimationZoom({ onComplete }: AnimationZoomProps) {
 
     // Toca na phase 3
     useEffect(() => {
-    if (phase === "p3" && audioRef.current) {
+    if (phase === "p2" && audioRef.current) {
         const audio = audioRef.current;
-        audio.currentTime = 0.3;
+        audio.currentTime = 0.2;
         audio.volume = 1;
         audio.play().catch((e) => console.warn("Audio blocked:", e));
 
@@ -42,7 +42,7 @@ export default function AnimationZoom({ onComplete }: AnimationZoomProps) {
                     clearInterval(interval);
                 }
             }, 100);
-        }, 800);
+        }, 1200);
 
         return () => clearTimeout(fade);
     }
