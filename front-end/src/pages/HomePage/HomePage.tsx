@@ -1,26 +1,21 @@
-import  Banner  from "./imgs/banner.png";
-import "./HomePage.css";
+import AboutSection from '../../components/AboutSection/AboutSection'
+import { HeroBanner } from '../../components/HeroBanner/HeroBanner';
+import './HomePage.css'
+import { useState } from 'react';
+import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
 
-export default function HomePage() {
+function HomePage() {
+    const [animDone, setAnimDone] = useState(false);
+
     return (
-    <div className="home-page">
-        <div className="banner"></div>
-        <div className="home-page__grid" />
-        <div className="home-page__blob" />
-
-        <div className="home-page__content">
-            <div className="home-page__tag">Welcome</div>
-
-            <h1 className="home-page__title">NICK</h1>
-
-            <p className="home-page__description">
-                Your personal homepage. Built fast. Looks sharp.
-                <br />
-                Just like the intro.
-            </p>
-
-            <button className="home-page__button">Explore</button>
+        <>
+        <div className="home-page--root">
+            <HeroBanner></HeroBanner>
+            <AboutSection />
+            {!animDone && <AnimationZoom onComplete={() => setAnimDone(true)} />}
         </div>
-    </div>
-    );
+        </>
+    )
 }
+
+export default HomePage
