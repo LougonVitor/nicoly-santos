@@ -1,8 +1,10 @@
+import  Banner  from "./imgs/banner.png";
 import "./HomePage.css";
 
 export default function HomePage() {
     return (
     <div className="home-page">
+        <div className="banner"></div>
         <div className="home-page__grid" />
         <div className="home-page__blob" />
 

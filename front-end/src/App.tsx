@@ -1,7 +1,7 @@
-import HomePage from './HomePage/HomePage'
+import HomePage from './pages/HomePage/HomePage'
 import './App.css'
 import { useState } from 'react';
-import AnimationZoom from './AnimationZoom/AnimationZoom';
+import AnimationZoom from './pages/AnimationZoom/AnimationZoom';
 
 function App() {
     const [animDone, setAnimDone] = useState(false);

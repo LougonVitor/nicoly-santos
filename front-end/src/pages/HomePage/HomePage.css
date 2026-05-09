@@ -11,6 +11,15 @@
     position: relative;
 }
 
+.banner {
+    width: 100vw;
+    height: 50vh;
+    background-image: url(imgs/banner.png);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
 .home-page__grid {
     position: absolute;
     inset: 0;
