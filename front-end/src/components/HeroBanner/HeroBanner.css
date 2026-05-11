@@ -1,15 +1,34 @@
+:root {
+    --initial-opacity: 0;
+    --final-opacity: 0;
+}
+
+.container-banner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
 .hero-banner {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-
-    /*SE REMOVER APARECE A CARA DELA DE COMEÇO*/
-    background-image: url("../../assets/nic_generated_by_ia.png");
+    position: absolute;
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+}
+
+.initial-image {
+    background-image: url("../../assets/quem-e-nicoly.png");
+    opacity: var(--initial-opacity);
+}
+
+.final-image {
+    background-image: url("../../assets/nicoly-bandeira.png");
+    opacity: var(--final-opacity);
 }

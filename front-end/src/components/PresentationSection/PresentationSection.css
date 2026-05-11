@@ -1,6 +1,6 @@
 .presentation-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #0d0d0d 0%, #2e291a 50%, #3e3a16 100%);
     box-shadow: 0px 0px 10px 2px black;
     display: flex;
     flex-direction: column;
@@ -19,16 +19,5 @@
         linear-gradient(rgba(245, 200, 0, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(245, 200, 0, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
-    pointer-events: none;
-}
-
-.presentation-section__blob {
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245, 200, 0, 0.12) 0%, transparent 70%);
     pointer-events: none;
 }

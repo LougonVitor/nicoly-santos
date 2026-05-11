@@ -5,7 +5,6 @@ import PresentationSection from '../../components/PresentationSection/Presentati
 import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
 
 export default function HomePage() {
-    // const [animDone, setAnimDone] = useState(false);
     const [progress, setProgress] = useState(0); // 0 → 1
     const [animDone, setAnimDone] = useState(false);
 
@@ -18,21 +17,40 @@ export default function HomePage() {
     };
 
         window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const heroWidthVw  = lerp(100, (500 / window.innerWidth) * 100, progress);
-    const heroHeightVh = lerp(100, (200 / window.innerHeight) * 100, progress);
+    const isMobile = window.innerWidth <= 768;
+    const targetW = isMobile ? window.innerWidth * 0.40 : 500;
+    const targetH = isMobile ? window.innerHeight * 0.35 : 300;
+
+    const heroWidthVw  = lerp(100, (targetW / window.innerWidth)  * 100, progress);
+    const heroHeightVh = lerp(100, (targetH / window.innerHeight) * 100, progress);
+
     const heroBorderR  = lerp(0, 20, progress);
     const aboutOpacity = lerp(0, 1, progress);
-    const aboutScale   = lerp(0.97, 1, progress);
+    const finalImageOpacity = lerp(0, 1, progress);
+    const initialImageOpacity = lerp(1, 0, progress);
+    const textBannerOpacity = lerp(-1, 1, progress);
 
-    const heroStyle: React.CSSProperties = {
+    const heroBannerStyle: React.CSSProperties = {
         width:        `${heroWidthVw}vw`,
         height:       `${heroHeightVh}vh`,
         borderRadius: `${heroBorderR}px`,
         boxShadow:    `0 ${lerp(0, 40, progress)}px ${lerp(0, 80, progress)}px rgba(0,0,0,${lerp(0, 0.4, progress).toFixed(2)})`,
     };
+
+    const imageSwappingStyle = {
+        "--final-opacity": `${finalImageOpacity}`,
+        "--initial-opacity": `${initialImageOpacity}`,
+    } as React.CSSProperties
+
+    const textOverBannerStyle: React.CSSProperties = {
+        width:        `${heroWidthVw}vw`,
+        height:       `${heroHeightVh}vh`,
+        opacity:        `${textBannerOpacity}`,
+    }
 
     return (
     <div className="home-root">
@@ -46,7 +64,6 @@ export default function HomePage() {
             className="about-reveal"
             style={{
             opacity:   aboutOpacity,
-            transform: `scale(${aboutScale})`,
             }}
         >
             <PresentationSection />
@@ -54,9 +71,24 @@ export default function HomePage() {
     </div>
 
     {/* Hero sticky na frente, encolhe com o scroll */}
-    <div className="hero-sticky-wrapper">
-        <div className="hero-shrink-container" style={heroStyle}>
+    <div className="hero-sticky-wrapper" style={imageSwappingStyle}>
+        <div className="hero-shrink-container" style={heroBannerStyle}>
             <HeroBanner />
+        </div>
+    </div>
+
+    
+    <div className="box-text under">
+        <div>
+            <h1>A MISSÃO</h1>
+            <h1>ESTÁ DADA</h1>
+        </div>
+    </div>
+
+    <div className="box-text over">
+        <div style={textOverBannerStyle}>
+            <h1>A MISSÃO</h1>
+            <h1>ESTÁ DADA</h1>
         </div>
     </div>
 
