@@ -3,8 +3,8 @@ import "./HomePage.css";
 import HeroBanner from '../../components/HeroBanner/HeroBanner';
 import PresentationSection from '../../components/PresentationSection/PresentationSection'
 import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
-import AboutMe from '../../components/AboutMe/AboutMe';
-import Initiatives from "../../components/Initiatives/Initiatives";
+import AboutMe from '../../components/AboutMeSection/AboutMe';
+import Initiatives from "../../components/InitiativesSection/Initiatives";
 import Projects from "../../components/ProjectsSection/Projects";
 import Volunteer from "../../components/VolunteerSection/Volunteer";
 import Contact from "../../components/ContactSection/Contact";
