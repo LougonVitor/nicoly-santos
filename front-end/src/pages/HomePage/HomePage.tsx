@@ -3,6 +3,7 @@ import "./HomePage.css";
 import HeroBanner from '../../components/HeroBanner/HeroBanner';
 import PresentationSection from '../../components/PresentationSection/PresentationSection'
 import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
+import AboutMe from '../../components/AboutMe/AboutMe';
 
 export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
@@ -94,7 +95,7 @@ export default function HomePage() {
 
     </div>
         {/* Conteúdo normal após o efeito terminar */}
-        <div className="post-scroll-content" />
+        <AboutMe />
     </div>
     );
 }
