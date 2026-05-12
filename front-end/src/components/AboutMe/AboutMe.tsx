@@ -75,7 +75,7 @@ export default function AboutMe() {
           </p>
 
           <div className="about__mission">
-            <span className="about__mission-title">HER MISSION</span>
+            <span className="about__mission-title">Missão</span>
             <p className="about__mission-text">
               Defender São Paulo como um estado mais seguro, com saúde eficiente,
               responsabilidade no uso do dinheiro público e representantes
