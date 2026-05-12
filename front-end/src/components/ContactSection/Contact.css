@@ -1,0 +1,302 @@
+/* ===== CONTACT — white section ===== */
+.contact {
+  background: #fff;
+  padding: 8rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.contact__header {
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+
+.contact__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: #FDBE21;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+.contact__title {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 900;
+  color: #000;
+  line-height: 0.9;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.contact__title em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 2px #FDBE21;
+}
+
+.contact__desc {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #888;
+  margin: 0;
+}
+
+/* Layout */
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Form */
+.contact__form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact__field-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #aaa;
+  font-weight: 700;
+}
+
+.contact__input,
+.contact__textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  color: #000;
+  font-size: 1rem;
+  padding: 0.8rem 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: none;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: #ccc;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: #FDBE21;
+}
+
+.contact__btn {
+  background: #000;
+  border: none;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: inherit;
+  align-self: flex-start;
+  width: 100%;
+  max-width: 340px;
+}
+
+.contact__btn:hover {
+  background: #FDBE21;
+  color: #000;
+}
+
+/* Success state */
+.contact__success {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.contact__success-icon {
+  width: 56px;
+  height: 56px;
+  background: #FDBE21;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.contact__success h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.contact__success p {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Channels sidebar */
+.contact__channels {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact__channels-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: #ccc;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  transition: padding-left 0.3s ease;
+}
+
+.contact__channel:hover {
+  padding-left: 0.5rem;
+}
+
+.contact__channel-icon {
+  width: 40px;
+  height: 40px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #FDBE21;
+  flex-shrink: 0;
+}
+
+.contact__channel-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact__channel-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.05em;
+}
+
+.contact__channel-handle {
+  font-size: 0.7rem;
+  color: #bbb;
+}
+
+.contact__channel-arrow {
+  font-size: 0.9rem;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.contact__channel:hover .contact__channel-arrow {
+  color: #FDBE21;
+}
+
+.contact__divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 2rem 0;
+}
+
+.contact__cta-box {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 1.8rem;
+}
+
+.contact__cta-tag {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: #FDBE21;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact__cta-text {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #888;
+  margin: 0 0 1.5rem;
+}
+
+.contact__cta-btn {
+  display: block;
+  background: #000;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.contact__cta-btn:hover {
+  background: #FDBE21;
+  color: #000;
+}
+
+@media (max-width: 1000px) {
+  .contact__header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .contact__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

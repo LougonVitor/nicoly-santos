@@ -7,6 +7,7 @@ import AboutMe from '../../components/AboutMe/AboutMe';
 import Initiatives from "../../components/Initiatives/Initiatives";
 import Projects from "../../components/ProjectsSection/Projects";
 import Volunteer from "../../components/VolunteerSection/Volunteer";
+import Contact from "../../components/ContactSection/Contact";
 
 export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
@@ -103,8 +104,10 @@ export default function HomePage() {
         <Initiatives />
 
         <Projects />
-        
+
         <Volunteer />
+        
+        <Contact />
     </div>
     );
 }
