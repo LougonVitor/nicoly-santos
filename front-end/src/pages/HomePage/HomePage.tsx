@@ -4,6 +4,7 @@ import HeroBanner from '../../components/HeroBanner/HeroBanner';
 import PresentationSection from '../../components/PresentationSection/PresentationSection'
 import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
 import AboutMe from '../../components/AboutMe/AboutMe';
+import Initiatives from "../../components/Initiatives/Initiatives";
 
 export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
@@ -96,6 +97,8 @@ export default function HomePage() {
     </div>
         {/* Conteúdo normal após o efeito terminar */}
         <AboutMe />
+
+        <Initiatives />
     </div>
     );
 }
