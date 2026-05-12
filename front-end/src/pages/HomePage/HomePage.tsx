@@ -5,6 +5,7 @@ import PresentationSection from '../../components/PresentationSection/Presentati
 import AnimationZoom from '../../components/AnimationZoom/AnimationZoom';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import Initiatives from "../../components/Initiatives/Initiatives";
+import Projects from "../../components/ProjectsSection/Projects";
 
 export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
@@ -99,6 +100,8 @@ export default function HomePage() {
         <AboutMe />
 
         <Initiatives />
+        
+        <Projects />
     </div>
     );
 }
