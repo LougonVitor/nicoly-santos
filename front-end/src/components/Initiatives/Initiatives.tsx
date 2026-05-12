@@ -9,6 +9,7 @@ const initiatives = [
     description:
       "Aplicativo integrado que permite ao cidadão acompanhar em tempo real sua posição na fila, receber notificações e acessar informações sobre o atendimento agendado.",
     status: "PROPOSTA",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=80",
   },
   {
     number: "002",
@@ -17,6 +18,7 @@ const initiatives = [
     description:
       "Programa de acolhimento estudantil com profissionais de saúde mental em todas as escolas estaduais de São Paulo, prevenindo ansiedade e evasão escolar.",
     status: "PROPOSTA",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80",
   },
   {
     number: "003",
@@ -25,6 +27,7 @@ const initiatives = [
     description:
       "Sistema integrado de inteligência e monitoramento para combate ao crime organizado, com uso de câmeras, IA e dados em tempo real pelas forças de segurança.",
     status: "PROPOSTA",
+    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=900&q=80",
   },
   {
     number: "004",
@@ -33,6 +36,7 @@ const initiatives = [
     description:
       "Portal de transparência com linguagem acessível para que qualquer cidadão possa acompanhar onde e como o dinheiro público está sendo gasto.",
     status: "PROPOSTA",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80",
   },
   {
     number: "005",
@@ -41,6 +45,7 @@ const initiatives = [
     description:
       "Campanha estadual de prevenção à ansiedade e depressão, com atendimento psicológico gratuito e descentralizado por regiões da cidade.",
     status: "PROPOSTA",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=80",
   },
 ];
 
@@ -106,13 +111,28 @@ export default function Initiatives() {
                 className="initiatives__card"
                 style={{ "--i": i } as React.CSSProperties}
               >
-                <div className="initiatives__card-top">
-                  <span className="initiatives__card-num">{item.number}</span>
-                  <span className="initiatives__card-status">{item.status}</span>
+                {/* Background image */}
+                <div
+                  className="initiatives__card-image"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
+
+                {/* Gradient overlay — dark at bottom, transparent at top */}
+                <div className="initiatives__card-overlay" />
+
+                {/* Content sits above image */}
+                <div className="initiatives__card-content">
+                  <div className="initiatives__card-top">
+                    <span className="initiatives__card-num">{item.number}</span>
+                    <span className="initiatives__card-status">{item.status}</span>
+                  </div>
+                  <div className="initiatives__card-body">
+                    <span className="initiatives__card-tag">{item.tag}</span>
+                    <h3 className="initiatives__card-title">{item.title}</h3>
+                    <p className="initiatives__card-desc">{item.description}</p>
+                  </div>
                 </div>
-                <span className="initiatives__card-tag">{item.tag}</span>
-                <h3 className="initiatives__card-title">{item.title}</h3>
-                <p className="initiatives__card-desc">{item.description}</p>
+
                 <div className="initiatives__card-line" />
               </article>
             ))}
