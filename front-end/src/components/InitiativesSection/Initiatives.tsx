@@ -21,6 +21,15 @@ const initiatives = [
         image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80",
     },
     {
+        number: "006",
+        tag: "PROTEÇÃO INFANTIL",
+        title: "Tolerância Zero à Pedofilia",
+        description:
+            "Endurecimento das penas, monitoramento digital ativo e criação de delegacias especializadas para investigação e combate ao abuso e exploração sexual infantil.",
+        status: "PROPOSTA",
+        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80",
+    },
+    {
         number: "003",
         tag: "SEGURANÇA",
         title: "Tecnologia contra o Crime",
