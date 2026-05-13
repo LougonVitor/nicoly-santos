@@ -106,7 +106,7 @@ export default function Volunteer() {
                     />
                     </div>
                     <div className="volunteer__field">
-                    <label className="volunteer__field-label">City</label>
+                    <label className="volunteer__field-label">Cidade</label>
                     <input
                         type="text"
                         className="volunteer__input"
