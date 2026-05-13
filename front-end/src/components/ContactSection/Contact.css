@@ -1,10 +1,15 @@
 /* ===== CONTACT — white section ===== */
 .contact {
+    height: 100vh;
+    max-height: 100vh;
     background: #fff;
-    padding: 2rem 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .contact--visible {
@@ -14,17 +19,25 @@
 
 .contact__container {
     max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* Header */
 .contact__header {
-    margin-bottom: 5rem;
+    margin-bottom: clamp(1.5rem, 3vh, 4rem);
     display: grid;
     grid-template-columns: auto 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: end;
+    flex-shrink: 0;
 }
 
 .contact__label {
@@ -46,14 +59,12 @@
 
 .contact__title em {
     font-style: normal;
-    /* color: transparent; */
-    /* -webkit-text-stroke: 2px #FDBE21; */
     color: #FDBE21;
 }
 
 .contact__desc {
-    font-size: 1rem;
-    line-height: 1.85;
+    font-size: clamp(0.9rem, 1.6vh, 1.2rem);
+    line-height: 1.75;
     color: #888;
     margin: 0;
 }
@@ -61,26 +72,33 @@
 /* Layout */
 .contact__layout {
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 4rem;
+    grid-template-columns: 1fr 360px;
+    gap: clamp(2rem, 4vw, 4rem);
     align-items: start;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    align-items: center;
 }
 
 /* Form */
 .contact__form-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: clamp(0.8rem, 1.8vh, 2rem);
+    overflow: hidden;
+    min-height: 0;
 }
 
 .contact__field {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .contact__field-label {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     letter-spacing: 0.25em;
     color: #aaa;
     font-weight: 700;
@@ -92,8 +110,8 @@
     border: none;
     border-bottom: 1px solid #e5e5e5;
     color: #000;
-    font-size: 1rem;
-    padding: 0.8rem 0;
+    font-size: clamp(0.82rem, 1.5vh, 1rem);
+    padding: clamp(0.4rem, 1vh, 0.8rem) 0;
     outline: none;
     transition: border-color 0.3s ease;
     font-family: inherit;
@@ -117,7 +135,7 @@
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.15em;
-    padding: 1.2rem 2rem;
+    padding: clamp(0.7rem, 1.4vh, 1.2rem) 2rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -127,6 +145,7 @@
     align-self: flex-start;
     width: 100%;
     max-width: 340px;
+    flex-shrink: 0;
 }
 
 .contact__btn:hover {
@@ -137,7 +156,12 @@
 /* Success state */
 .contact__success {
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 .contact__success-icon {
@@ -152,6 +176,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
+    flex-shrink: 0;
 }
 
 .contact__success h3 {
@@ -174,6 +199,8 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    overflow: hidden;
+    min-height: 0;
 }
 
 .contact__channels-title {
@@ -182,19 +209,21 @@
     color: #ccc;
     font-weight: 700;
     display: block;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
+    padding-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
     border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
 }
 
 .contact__channel {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.2rem 0;
+    padding: clamp(0.5rem, 1.2vh, 1.2rem) 0;
     border-bottom: 1px solid #f0f0f0;
     text-decoration: none;
     transition: padding-left 0.3s ease;
+    flex-shrink: 0;
 }
 
 .contact__channel:hover {
@@ -202,14 +231,14 @@
 }
 
 .contact__channel-icon {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     background: #fafafa;
     border: 1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.05em;
     color: #FDBE21;
@@ -224,19 +253,19 @@
 }
 
 .contact__channel-name {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 1.4vh, 0.9rem);
     font-weight: 700;
     color: #000;
     letter-spacing: 0.05em;
 }
 
 .contact__channel-handle {
-    font-size: 0.7rem;
+    font-size: clamp(0.72rem, 1.2vh, 0.8rem);
     color: #bbb;
 }
 
 .contact__channel-arrow {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #ddd;
     transition: color 0.3s ease;
 }
@@ -248,29 +277,31 @@
 .contact__divider {
     height: 1px;
     background: #f0f0f0;
-    margin: 2rem 0;
+    margin: clamp(0.8rem, 1.5vh, 2rem) 0;
+    flex-shrink: 0;
 }
 
 .contact__cta-box {
     background: #fafafa;
     border: 1px solid #eee;
-    padding: 1.8rem;
+    padding: clamp(1rem, 2vh, 1.8rem);
+    flex-shrink: 0;
 }
 
 .contact__cta-tag {
     display: block;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     letter-spacing: 0.25em;
     color: #FDBE21;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
 }
 
 .contact__cta-text {
-    font-size: 0.85rem;
-    line-height: 1.7;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    line-height: 1.65;
     color: #888;
-    margin: 0 0 1.5rem;
+    margin: 0 0 clamp(0.8rem, 1.5vh, 1.5rem);
 }
 
 .contact__cta-btn {
@@ -280,7 +311,7 @@
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.2em;
-    padding: 0.9rem 1.5rem;
+    padding: clamp(0.6rem, 1.1vh, 0.9rem) 1.5rem;
     text-decoration: none;
     text-align: center;
     transition: background 0.3s ease;
@@ -291,13 +322,61 @@
     color: #000;
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 1000px) {
+    .contact {
+        height: 100dvh;
+        max-height: 100dvh;
+    }
+
+    .contact__container {
+        padding: 1.5rem 1.2rem 1.5rem;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .contact__container::-webkit-scrollbar {
+        display: none;
+    }
+
     .contact__header {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 0.8rem;
+        margin-bottom: clamp(1rem, 2vh, 2rem);
     }
+
     .contact__layout {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: clamp(1.5rem, 3vh, 3rem);
+        flex: none;
+        overflow: visible;
+    }
+
+    .contact__channels {
+        overflow: visible;
+    }
+
+    .contact__cta-box {
+        display: none; /* esconde CTA secundário em mobile para não sobrecarregar */
+    }
+
+    .contact__divider {
+        display: none;
+    }
+}
+
+/* Extra small (< 400px) */
+@media (max-width: 400px) {
+    .contact__container {
+        padding: 1rem 0.8rem 1rem;
+    }
+
+    .contact__title {
+        font-size: 1.5rem;
+    }
+
+    .contact__desc {
+        display: none;
     }
 }
