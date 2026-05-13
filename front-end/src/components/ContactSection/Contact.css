@@ -322,6 +322,32 @@
     color: #000;
 }
 
+/* Jaguar de fundo */
+.projects__jaguar-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.projects__jaguar-bg svg {
+    width: 740px;
+    height: auto;
+    opacity: 0.07;
+    transform: scaleX(-1) translateX(40px);
+    animation: jagPulse 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(253,190,33,0.6));
+}
+
+@keyframes jagPulse {
+    0%, 100% { opacity: 0.05; transform: scaleX(-1) translateX(40px) scale(1); }
+    50%       { opacity: 0.15; transform: scaleX(-1) translateX(40px) scale(1.03); }
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 1000px) {
     .contact {
