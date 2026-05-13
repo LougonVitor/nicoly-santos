@@ -1,7 +1,7 @@
 /* ===== CONTACT — white section ===== */
 .contact {
     background: #fff;
-    padding: 8rem 0;
+    padding: 2rem 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;

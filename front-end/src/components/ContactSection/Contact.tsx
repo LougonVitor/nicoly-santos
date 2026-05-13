@@ -6,19 +6,19 @@ const channels = [
         icon: "IG",
         name: "Instagram",
         handle: "@nicolysantos",
-        link: "https://instagram.com",
+        link: "https://www.instagram.com/nicoly.mbl/",
     },
     {
         icon: "WA",
         name: "WhatsApp",
         handle: "Official group",
-        link: "https://whatsapp.com",
+        link: "https://chat.whatsapp.com/IYRNssUBRxj4J2nGT9DDqM?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndoftTn6mTWJZFovIfnqznwy-ZSlU7qcM5if4e3bjagsHJ-HhN-wC1r8QWE8_aem_d2Xf1SWCUWvXRgoMtHl8bg",
     },
     {
         icon: "YT",
         name: "YouTube",
         handle: "Nicoly Santos",
-        link: "https://youtube.com",
+        link: "https://www.youtube.com/@Nicolymbl",
     },
 ];
 
@@ -52,14 +52,13 @@ export default function Contact() {
 
             {/* Header */}
             <div className="contact__header">
-            <span className="contact__label">CONTACT</span>
+            <span className="contact__label">CONTATO</span>
             <h2 className="contact__title">
-                GET IN<br />
-                <em>TOUCH</em>
+                ENTRE EM<br />
+                <em>CONTATO</em>
             </h2>
             <p className="contact__desc">
-                Your voice matters. Get in touch, share your ideas, or ask questions
-                about Nicoly Santos's campaign.
+                Sua voz importa. Entre em contato, compartilhe suas ideias ou faça perguntas sobre a campanha de Nicoly Santos.
             </p>
             </div>
 
@@ -70,17 +69,17 @@ export default function Contact() {
                 {submitted ? (
                 <div className="contact__success">
                     <div className="contact__success-icon">✓</div>
-                    <h3>Message sent!</h3>
-                    <p>We will be in touch soon. Thank you for reaching out to Nicoly Santos.</p>
+                    <h3>Mensagem enviada!</h3>
+                    <p>Entraremos em contato em breve. Obrigado por entrar em contato com Nicoly Santos.</p>
                 </div>
                 ) : (
                 <>
                     <div className="contact__field">
-                    <label className="contact__field-label">Name</label>
+                    <label className="contact__field-label">Nome</label>
                     <input
                         type="text"
                         className="contact__input"
-                        placeholder="Your full name"
+                        placeholder="Seu nome completo"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                     />
@@ -90,23 +89,23 @@ export default function Contact() {
                     <input
                         type="email"
                         className="contact__input"
-                        placeholder="your@email.com"
+                        placeholder="exemplo@email.com"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                     </div>
                     <div className="contact__field">
-                    <label className="contact__field-label">Message</label>
+                    <label className="contact__field-label">Mensagem</label>
                     <textarea
                         className="contact__textarea"
-                        placeholder="Write your message..."
+                        placeholder="Escreva sua mensagem aqui..."
                         rows={5}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                     />
                     </div>
                     <button className="contact__btn" onClick={handleSubmit}>
-                    <span>SEND MESSAGE</span>
+                    <span>ENVIAR MENSAGEM</span>
                     <span>→</span>
                     </button>
                 </>
@@ -115,7 +114,7 @@ export default function Contact() {
 
             {/* Channels */}
             <div className="contact__channels">
-                <span className="contact__channels-title">SOCIAL MEDIA</span>
+                <span className="contact__channels-title">REDES SOCIAIS</span>
                 {channels.map((channel, i) => (
                 <a
                     key={channel.name}
@@ -137,12 +136,12 @@ export default function Contact() {
                 <div className="contact__divider" />
 
                 <div className="contact__cta-box">
-                <span className="contact__cta-tag">OFFICIAL GROUP</span>
+                <span className="contact__cta-tag">GRUPO OFICIAL</span>
                 <p className="contact__cta-text">
-                    Join the WhatsApp group and get campaign updates first-hand.
+                    Participe do grupo do WhatsApp e receba as atualizações da campanha em primeira mão.
                 </p>
                 <a href="https://whatsapp.com" className="contact__cta-btn" target="_blank" rel="noopener noreferrer">
-                    JOIN THE GROUP
+                    PARTICIPE DO GRUPO
                 </a>
                 </div>
             </div>
