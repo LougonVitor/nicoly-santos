@@ -58,9 +58,29 @@ export default function AboutMe() {
             <div className="about__photo-wrapper">
                 <div className="about__photo-placeholder"></div>
                 <div className="about__photo-badge">
-                <   span>Primeira Fundadora de Honra</span>
+                    <span>Primeira Fundadora de Honra</span>
                     <span className="about__photo-badge-party">Partido Missão</span>
                 </div>
+            </div>
+
+            {/* Bloco de doação integrado */}
+            <div className="about__donate">
+                <div className="about__donate-header">
+                    <span className="about__donate-eyebrow">SEM DINHEIRO PÚBLICO</span>
+                    <p className="about__donate-text">
+                        Esta campanha é financiada por pessoas que acreditam numa política honesta.
+                        Cada contribuição faz diferença.
+                    </p>
+                </div>
+                <a
+                    href="https://queroapoiar.com.br/nicoly-santos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about__donate-btn"
+                >
+                    <span className="about__donate-btn-icon">♥</span>
+                    QUERO APOIAR
+                </a>
             </div>
         </div>
 
