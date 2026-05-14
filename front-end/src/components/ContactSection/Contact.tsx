@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useContactForm } from "../../hooks/useContactForm";
 import "./Contact.css";
 
 const channels = [
@@ -24,8 +25,8 @@ const channels = [
 
 export default function Contact() {
     const [visible, setVisible] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const { form, setForm, submitted, handleSubmit } = useContactForm();
+    const [isSending, setIsSending] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -37,10 +38,13 @@ export default function Contact() {
         return () => observer.disconnect();
     }, []);
 
-    const handleSubmit = (e: React.MouseEvent) => {
-        e.preventDefault();
-        if (form.name && form.email && form.message) setSubmitted(true);
-    };
+    const handleSubmitWrapper = async () => {
+        if(!isSending) {
+            setIsSending(true);
+            await handleSubmit();
+            setIsSending(false);
+        }
+    }
 
     return (
         <section
@@ -111,9 +115,9 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                     />
                     </div>
-                    <button className="contact__btn" onClick={handleSubmit}>
-                    <span>ENVIAR MENSAGEM</span>
-                    <span>→</span>
+                    <button className="contact__btn" onClick={handleSubmitWrapper}>
+                        {isSending ? 'Enviando...' : 'ENVIAR MENSAGEM'}
+                        <span>→</span>
                     </button>
                 </>
                 )}
