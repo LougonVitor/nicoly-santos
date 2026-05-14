@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useVolunteerForm } from "../../hooks/useVolunteerForm";
 import "./Volunteer.css";
 
 const reasons = [
@@ -10,8 +11,8 @@ const reasons = [
 
 export default function Volunteer() {
     const [visible, setVisible] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-    const [form, setForm] = useState({ name: "", email: "", city: "", phone: "" });
+    const { form, setForm, submitted, handleSubmit } = useVolunteerForm();
+    const [isSending, setIsSending] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -23,10 +24,13 @@ export default function Volunteer() {
         return () => observer.disconnect();
     }, []);
 
-    const handleSubmit = (e: React.MouseEvent) => {
-        e.preventDefault();
-        setSubmitted(true);
-    };
+    const handleSubmitWrapper = async () => {
+        if(!isSending) {
+            setIsSending(true);
+            await handleSubmit();
+            setIsSending(false);
+        }
+    }
 
     return (
         <section
@@ -127,8 +131,10 @@ export default function Volunteer() {
                     </div>
                 </div>
 
-                <button className="volunteer__btn" onClick={handleSubmit}>
-                    <span>SIM, EU QUERO PARTICIPAR</span>
+                <button className="volunteer__btn" onClick={handleSubmitWrapper}>
+                    <span>
+                        {isSending ? 'Enviando...' : 'SIM, EU QUERO PARTICIPAR'}
+                    </span>
                     <span className="volunteer__btn-arrow">→</span>
                 </button>
 
