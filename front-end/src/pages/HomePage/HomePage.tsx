@@ -14,18 +14,35 @@ export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
     const [animDone, setAnimDone] = useState(false);
 
+    // Lock / unlock body scroll while animation runs
     useEffect(() => {
-    const SCROLL_DISTANCE = 500; // px de scroll para completar o efeito
+        if (!animDone) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+            // Ensure we start from top when page unlocks
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+        return () => { document.body.style.overflow = ""; };
+    }, [animDone]);
 
-    const onScroll = () => {
-        const p = Math.min(window.scrollY / SCROLL_DISTANCE, 1);
-        setProgress(p);
-    };
+    useEffect(() => {
+        if (!animDone) return; // don't listen until animation is done
+
+        const SCROLL_DISTANCE = 500;
+
+        const onScroll = () => {
+            const p = Math.min(window.scrollY / SCROLL_DISTANCE, 1);
+            setProgress(p);
+        };
 
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("resize", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        };
+    }, [animDone]);
 
     const isMobile = window.innerWidth <= 768;
     const targetW = isMobile ? window.innerWidth * 0.40 : 500;
@@ -50,68 +67,66 @@ export default function HomePage() {
     const imageSwappingStyle = {
         "--final-opacity": `${finalImageOpacity}`,
         "--initial-opacity": `${initialImageOpacity}`,
-    } as React.CSSProperties
+    } as React.CSSProperties;
 
     const textOverBannerStyle: React.CSSProperties = {
         width:        `${heroWidthVw}vw`,
         height:       `${heroHeightVh}vh`,
         opacity:        `${textBannerOpacity}`,
-    }
+    };
 
     return (
-    <div className="home-root">
-    {!animDone && <AnimationZoom onComplete={() => setAnimDone(true)} />}
+        <div className="home-root">
+            {!animDone && <AnimationZoom onComplete={() => setAnimDone(true)} />}
 
-    <div className="scroll-driver">
+            <div className="scroll-driver">
 
-    {/* AboutSection fica sticky no fundo — aparece enquanto o hero encolhe */}
-    <div className="about-sticky-bg">
-        <div
-            className="about-reveal"
-            style={{
-            opacity:   aboutOpacity,
-            }}
-        >
-            <PresentationSection />
+                {/* AboutSection fica sticky no fundo — aparece enquanto o hero encolhe */}
+                <div className="about-sticky-bg">
+                    <div
+                        className="about-reveal"
+                        style={{ opacity: aboutOpacity }}
+                    >
+                        <PresentationSection />
+                    </div>
+                </div>
+
+                {/* Hero sticky na frente, encolhe com o scroll */}
+                <div className="hero-sticky-wrapper" style={imageSwappingStyle}>
+                    <div className="hero-shrink-container" style={heroBannerStyle}>
+                        <HeroBanner />
+                    </div>
+                </div>
+
+                <div className="box-text under">
+                    <div>
+                        <h1>A MISSÃO</h1>
+                        <h1>ESTÁ DADA</h1>
+                    </div>
+                </div>
+
+                <div className="box-text over">
+                    <div style={textOverBannerStyle}>
+                        <h1>A MISSÃO</h1>
+                        <h1>ESTÁ DADA</h1>
+                    </div>
+                </div>
+
+            </div>
+
+            {/* Conteúdo normal após o efeito terminar */}
+            <AboutMe />
+
+            <Initiatives />
+
+            <Projects />
+
+            <Volunteer />
+
+            <Contact />
+
+            <DonateFloat />
         </div>
-    </div>
-
-    {/* Hero sticky na frente, encolhe com o scroll */}
-    <div className="hero-sticky-wrapper" style={imageSwappingStyle}>
-        <div className="hero-shrink-container" style={heroBannerStyle}>
-            <HeroBanner />
-        </div>
-    </div>
-
-    
-    <div className="box-text under">
-        <div>
-            <h1>A MISSÃO</h1>
-            <h1>ESTÁ DADA</h1>
-        </div>
-    </div>
-
-    <div className="box-text over">
-        <div style={textOverBannerStyle}>
-            <h1>A MISSÃO</h1>
-            <h1>ESTÁ DADA</h1>
-        </div>
-    </div>
-
-    </div>
-        {/* Conteúdo normal após o efeito terminar */}
-        <AboutMe />
-
-        <Initiatives />
-
-        <Projects />
-
-        <Volunteer />
-        
-        <Contact />
-        
-        <DonateFloat />
-    </div>
     );
 }
 
