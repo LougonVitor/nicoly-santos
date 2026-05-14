@@ -8,6 +8,7 @@ import Initiatives from "../../components/InitiativesSection/Initiatives";
 import Projects from "../../components/ProjectsSection/Projects";
 import Volunteer from "../../components/VolunteerSection/Volunteer";
 import Contact from "../../components/ContactSection/Contact";
+import DonateFloat from "../../components/DonateFloat/DonateFloat";
 
 export default function HomePage() {
     const [progress, setProgress] = useState(0); // 0 → 1
@@ -108,6 +109,8 @@ export default function HomePage() {
         <Volunteer />
         
         <Contact />
+        
+        <DonateFloat />
     </div>
     );
 }

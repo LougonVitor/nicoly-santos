@@ -1,0 +1,163 @@
+/* ===== DONATE FLOAT BUTTON ===== */
+.donate-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+/* Balão de mensagem */
+.donate-float__bubble {
+    background: #000;
+    color: #fff;
+    padding: 1rem 1.2rem;
+    max-width: 240px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+    transform-origin: bottom right;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.donate-float__bubble--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Triângulo apontando para o botão */
+.donate-float__bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #000;
+}
+
+.donate-float__bubble-tag {
+    display: block;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: #FDBE21;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.donate-float__bubble-text {
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 0 0.75rem;
+}
+
+.donate-float__bubble-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FDBE21;
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 0.6rem 0.8rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.donate-float__bubble-link:hover {
+    background: #f5b200;
+}
+
+/* Botão principal */
+.donate-float__btn {
+    width: 56px;
+    height: 56px;
+    background: #FDBE21;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 20px rgba(253, 190, 33, 0.4);
+    flex-shrink: 0;
+}
+
+.donate-float__btn:hover {
+    transform: scale(1.08);
+    background: #f5b200;
+}
+
+.donate-float__btn:active {
+    transform: scale(0.96);
+}
+
+/* Ícone de coração / cifrão */
+.donate-float__btn-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.donate-float__btn--open .donate-float__btn-icon {
+    transform: rotate(45deg);
+}
+
+/* Ping de atenção (aparece só quando fechado) */
+.donate-float__ping {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 12px;
+    height: 12px;
+}
+
+.donate-float__ping::before,
+.donate-float__ping::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    border-radius: 50%;
+}
+
+.donate-float__ping::before {
+    animation: pingPulse 2s ease-out infinite;
+}
+
+.donate-float__ping--hidden {
+    display: none;
+}
+
+@keyframes pingPulse {
+    0% { transform: scale(1); opacity: 1; }
+    70% { transform: scale(2.2); opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .donate-float {
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .donate-float__bubble {
+        max-width: 200px;
+    }
+
+    .donate-float__btn {
+        width: 50px;
+        height: 50px;
+    }
+}
