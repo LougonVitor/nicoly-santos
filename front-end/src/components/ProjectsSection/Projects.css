@@ -221,9 +221,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* never scroll — compress instead */
+    overflow: hidden;
     min-height: 0;
-    justify-content: center; /* vertically center when there's room */
+    justify-content: center;
 }
 
 .projects__content-header {
@@ -264,7 +264,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    flex-shrink: 0; /* don't let list stretch and cause overflow */
+    flex-shrink: 0;
 }
 
 .projects__item {
@@ -323,7 +323,7 @@
     }
 
     .projects__container {
-        padding: 0 3rem 3rem;
+        padding: 0 1.25rem 1.25rem;
     }
 
     .projects__header {
@@ -344,29 +344,28 @@
         border-right: none;
         border-bottom: 1px solid #e5e5e5;
         flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
+        /* Distribui os cards igualmente sem overflow */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow: hidden; /* sem scroll lateral */
         flex-shrink: 0;
-        /* hide scrollbar but keep functionality */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .projects__nav::-webkit-scrollbar {
-        display: none;
     }
 
     .projects__nav-item {
         border-bottom: none;
         border-right: 1px solid #e5e5e5;
-        min-width: 110px;
-        flex-shrink: 0;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        padding: 0.8rem 1rem;
-        gap: 0.2rem;
+        /* Tamanho igual para todos — sem min-width fixo */
+        min-width: 0;
+        flex: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 0.875rem;
+        gap: 0.15rem;
     }
 
+    /* Barra de destaque no topo em vez de left */
     .projects__nav-item::before {
         left: 0;
         right: 0;
@@ -383,17 +382,19 @@
 
     .projects__nav-num {
         font-size: 1rem;
-        grid-row: auto;
-        grid-column: auto;
         align-self: auto;
     }
 
     .projects__nav-name {
-        font-size: 0.62rem;
+        font-size: 0.6rem;
         align-self: auto;
-        white-space: nowrap;
+        /* Permite quebra de linha para não estourar o card */
+        white-space: normal;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 1.3;
     }
 
     .projects__nav-cat {
@@ -442,9 +443,13 @@
         font-size: 1.3rem;
     }
 
+    .projects__nav {
+        /* Ainda 3 colunas, apenas menos padding */
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .projects__nav-item {
-        min-width: 95px;
-        padding: 0.6rem 0.7rem;
+        padding: 0.6rem 0.6rem;
     }
 
     .projects__content-inner {
