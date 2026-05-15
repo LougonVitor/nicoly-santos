@@ -24,7 +24,7 @@
 }
 
 .initial-image {
-    background-image: url("../../assets/quem-e-nicoly.png");
+    background-image: url("../../assets/capa-quem-e-nicoly.png");
     opacity: var(--initial-opacity);
 }
 
