@@ -18,6 +18,7 @@
     max-width: 240px;
     position: relative;
     opacity: 0;
+    display: none;
     transform: translateY(8px) scale(0.95);
     transform-origin: bottom right;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -28,6 +29,7 @@
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
+    display: block;
 }
 
 /* Triângulo apontando para o botão */
