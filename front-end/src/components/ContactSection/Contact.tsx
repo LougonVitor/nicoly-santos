@@ -6,7 +6,7 @@ const channels = [
     {
         icon: "IG",
         name: "Instagram",
-        handle: "@nicolysantos",
+        handle: "@nicoly.mbl",
         link: "https://www.instagram.com/nicoly.mbl/",
     },
     {
@@ -151,7 +151,7 @@ export default function Contact() {
                 <p className="contact__cta-text">
                     Participe do grupo do WhatsApp e receba as atualizações da campanha em primeira mão.
                 </p>
-                <a href="https://whatsapp.com" className="contact__cta-btn" target="_blank" rel="noopener noreferrer">
+                <a href="https://chat.whatsapp.com/IYRNssUBRxj4J2nGT9DDqM?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndoftTn6mTWJZFovIfnqznwy-ZSlU7qcM5if4e3bjagsHJ-HhN-wC1r8QWE8_aem_d2Xf1SWCUWvXRgoMtHl8bg" className="contact__cta-btn" target="_blank" rel="noopener noreferrer">
                     PARTICIPE DO GRUPO
                 </a>
                 </div>
