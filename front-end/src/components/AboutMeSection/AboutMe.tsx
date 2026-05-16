@@ -68,7 +68,7 @@ export default function AboutMe() {
                 <div className="about__donate-header">
                     <span className="about__donate-eyebrow">SEM DINHEIRO PÚBLICO</span>
                     <p className="about__donate-text">
-                        Esta campanha é financiada por pessoas que acreditam numa política honesta.
+                        Esta pré-campanha é financiada por pessoas que acreditam numa política honesta.
                         Cada contribuição faz diferença.
                     </p>
                 </div>

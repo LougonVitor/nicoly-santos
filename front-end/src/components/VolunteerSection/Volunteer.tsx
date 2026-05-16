@@ -139,7 +139,7 @@ export default function Volunteer() {
                 </button>
 
                 <p className="volunteer__notice">
-                    Ao se inscrever, você concorda em receber comunicações sobre a campanha de Nicoly
+                    Ao se inscrever, você concorda em receber comunicações sobre a pré-campanha de Nicoly
                     Santos.
                 </p>
                 </div>

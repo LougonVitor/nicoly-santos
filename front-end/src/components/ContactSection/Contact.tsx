@@ -69,7 +69,7 @@ export default function Contact() {
                 <em>CONTATO</em>
             </h2>
             <p className="contact__desc">
-                Sua voz importa. Entre em contato, compartilhe suas ideias ou faça perguntas sobre a campanha de Nicoly Santos.
+                Sua voz importa. Entre em contato, compartilhe suas ideias ou faça perguntas sobre a pré-campanha de Nicoly Santos.
             </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function Contact() {
                 <div className="contact__cta-box">
                 <span className="contact__cta-tag">GRUPO OFICIAL</span>
                 <p className="contact__cta-text">
-                    Participe do grupo do WhatsApp e receba as atualizações da campanha em primeira mão.
+                    Participe do grupo do WhatsApp e receba as atualizações da pré-campanha em primeira mão.
                 </p>
                 <a href="https://chat.whatsapp.com/IYRNssUBRxj4J2nGT9DDqM?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndoftTn6mTWJZFovIfnqznwy-ZSlU7qcM5if4e3bjagsHJ-HhN-wC1r8QWE8_aem_d2Xf1SWCUWvXRgoMtHl8bg" className="contact__cta-btn" target="_blank" rel="noopener noreferrer">
                     PARTICIPE DO GRUPO
