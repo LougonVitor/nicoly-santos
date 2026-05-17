@@ -21,6 +21,24 @@ const channels = [
         handle: "Nicoly Santos",
         link: "https://www.youtube.com/@Nicolymbl",
     },
+    {
+        icon: "TK",
+        name: "TikTok",
+        handle: "@nicoly.mbl",
+        link: "https://www.tiktok.com/@nicoly.mbl",
+    },
+    {
+        icon: "TW",
+        name: "Twitch",
+        handle: "nicolymbl",
+        link: "https://www.twitch.tv/nicolymbl",
+    },
+    {
+        icon: "DC",
+        name: "Discord",
+        handle: "Nicoly Santos | Discord",
+        link: "https://discord.gg/b66xKgvvuP",
+    },
 ];
 
 export default function Contact() {
