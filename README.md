@@ -1,4 +1,4 @@
-# 🐆 Nicoly Santos — Personal Portfolio
+# 🐆 Nicoly Santos — Portfolio
 
 > **"A missão está dada."**
 > A political and institutional portfolio for Nicoly Santos, built with a cinematic scroll-driven hero animation, full sections for biography, initiatives, projects, volunteering, and contact — all in one single-page React app.
