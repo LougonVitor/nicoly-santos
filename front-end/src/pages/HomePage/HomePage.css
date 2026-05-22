@@ -4,6 +4,26 @@
    ───────────────────────────────────────────── */
 
 /* ── Root ── */
+
+html {
+    scrollbar-gutter: stable;
+    background-color: #FCBE26;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FCBE26;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* or whatever color you want the handle */
+    border-radius: 8px;
+    /* border: 1px solid #FCBE26; */ /* creates padding effect */
+}
+
 .home-root {
     position: relative;
 }
