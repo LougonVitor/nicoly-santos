@@ -221,6 +221,9 @@
     .initiatives {
         height: auto;
     }
+    .initiatives__card {
+        height: 400px;
+    }
     .initiatives__sticky {
         position: static;
         height: auto;
