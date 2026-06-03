@@ -439,10 +439,6 @@
         padding: 0.6rem 0 0.4rem;
     }
 
-    .projects__title {
-        font-size: 1.3rem;
-    }
-
     .projects__nav {
         /* Ainda 3 colunas, apenas menos padding */
         grid-template-columns: repeat(3, 1fr);
