@@ -35,7 +35,6 @@
 
 @media (max-width: 800px) {
     .initial-image {
-        background-image: url("../../assets/quem-e-nicoly.png");
-        opacity: var(--initial-opacity);
+        background-image: url("../../assets/BANNERMOBILE.png");
     }
 }
