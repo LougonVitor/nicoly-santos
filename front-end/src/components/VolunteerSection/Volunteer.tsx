@@ -48,7 +48,7 @@ export default function Volunteer() {
             <span className="volunteer__label">PARTICIPE</span>
             <h2 className="volunteer__title">
                 SE TORNE<br />
-                <span className="volunteer__title--outline">VOLUTÁRIO</span>
+                <span className="volunteer__title--outline">VOLUNTÁRIO</span>
             </h2>
 
             <p className="volunteer__desc">
