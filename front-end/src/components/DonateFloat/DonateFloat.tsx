@@ -38,7 +38,7 @@ export default function DonateFloat() {
             <div className={`donate-float__bubble ${open ? "donate-float__bubble--visible" : ""}`}>
                 <span className="donate-float__bubble-tag">PARTIDO MISSÃO</span>
                 <p className="donate-float__bubble-text">
-                    Esta pré-campanha não usa <strong style={{ color: "#fff" }}>dinheiro público</strong>.
+                    Esta campanha não usa <strong style={{ color: "#fff" }}>dinheiro público</strong>.
                     Cada contribuição vem de pessoas que acreditam numa política honesta.
                     Faça parte disso.
                 </p>
@@ -48,7 +48,7 @@ export default function DonateFloat() {
                     rel="noopener noreferrer"
                     className="donate-float__bubble-link"
                 >
-                    QUERO APOIAR A PRÉ-CAMPANHA
+                    QUERO APOIAR A campanha
                     <span>→</span>
                 </a>
             </div>
@@ -57,7 +57,7 @@ export default function DonateFloat() {
             <button
                 className={`donate-float__btn ${open ? "donate-float__btn--open" : ""}`}
                 onClick={toggle}
-                aria-label="Apoiar a pré-campanha"
+                aria-label="Apoiar a campanha"
             >
                 <span className="donate-float__btn-icon">
                     {open ? "✕" : "♥"}
