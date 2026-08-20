@@ -66,9 +66,9 @@ export default function AboutMe() {
             {/* Bloco de doação integrado */}
             <div className="about__donate">
                 <div className="about__donate-header">
-                    <span className="about__donate-eyebrow">SEM DINHEIRO PÚBLICO</span>
+                    <span className="about__donate-eyebrow">ME AJUDE NESSA MISSÃO</span>
                     <p className="about__donate-text">
-                        Esta campanha é financiada por pessoas que acreditam numa política honesta.
+                        Esta campanha conta com o apoio de pessoas que acreditam numa política honesta.
                         Cada contribuição faz diferença.
                     </p>
                 </div>
