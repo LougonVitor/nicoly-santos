@@ -1,7 +1,5 @@
 import { useState } from "react";
-// Quando formos integrar com o Google Sheets, basta seguir o mesmo padrão
-// já usado em useVolunteerForm.ts / useContactForm.ts:
-// import { submitToSheet } from "../services/googleSheets";
+import { submitToSheet } from "../services/googleSheets";
 
 export interface MaterialFormData {
   name: string;
@@ -65,17 +63,11 @@ export function useMaterialForm() {
   };
 
   const handleSubmit = async () => {
-    // ── INTEGRAÇÃO COM GOOGLE SHEETS (próxima etapa) ──
-    // Quando o formulário estiver pronto para gravar na planilha, troque o
-    // bloco abaixo por algo como:
-    //
-    //   await submitToSheet({
-    //     ...form,
-    //     wantsSticker: form.wantsSticker ? "sim" : "não",
-    //     type: "material",
-    //   });
-    //
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await submitToSheet({
+      ...form,
+      wantsSticker: form.wantsSticker ? "sim" : "não",
+      type: "material",
+    });
     setSubmitted(true);
   };
 
